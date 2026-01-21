@@ -28,27 +28,73 @@ function averageScore(list: Student[]): number {
   return total / list.length;
 }
 
-const studentsWithGrade: StudentWithGrade[] = students.map((student) => ({
-  ...student,
-  grade: getGrade(student.score),
-}));
+function computeResults(list: Student[]) {
+  const studentsWithGrade: StudentWithGrade[] = list.map((student) => ({
+    ...student,
+    grade: getGrade(student.score),
+  }));
 
-// Case 1 — Urutkan skor tertinggi -> terendah
-const leaderboard = [...studentsWithGrade].sort((a, b) => b.score - a.score);
+  const leaderboard = [...studentsWithGrade].sort((a, b) => b.score - a.score);
+  const avg = averageScore(studentsWithGrade);
+  const aboveAverage = leaderboard.filter((s) => s.score > avg);
+  return { leaderboard, avg, aboveAverage };
+}
 
-// Case 2 — Hitung nilai rata-rata
-const avg = averageScore(studentsWithGrade);
+function render(results: ReturnType<typeof computeResults>) {
+  const tbody = document.getElementById("leaderboard-body");
+  if (!tbody) return;
 
-// Case 3 — Tampilkan siswa di atas rata-rata
-const aboveAverage = leaderboard.filter((s) => s.score > avg);
+  tbody.textContent = "";
 
-// Case 4 (Bonus) — Tampilkan grade huruf
-console.log("DumbWays Leaderboard");
-leaderboard.forEach((student, index) => {
-  console.log(`${index + 1}. ${student.name} - ${student.score} (${student.grade})`);
-});
-console.log("");
-console.log(`Nilai rata-rata: ${avg.toFixed(1)}`);
-console.log(
-  `Siswa di atas rata-rata: ${aboveAverage.map((s) => s.name).join(", ") || "-"}`,
-);
+  results.leaderboard.forEach((student, index) => {
+    const row = document.createElement("tr");
+
+    const rankCell = document.createElement("td");
+    rankCell.textContent = String(index + 1);
+
+    const nameCell = document.createElement("td");
+    nameCell.textContent = student.name;
+
+    const scoreCell = document.createElement("td");
+    scoreCell.textContent = String(student.score);
+
+    const gradeCell = document.createElement("td");
+    const badge = document.createElement("span");
+    badge.className = "badge";
+    badge.textContent = student.grade;
+    gradeCell.appendChild(badge);
+
+    row.append(rankCell, nameCell, scoreCell, gradeCell);
+    tbody.appendChild(row);
+  });
+
+  const avgEl = document.getElementById("avg");
+  if (avgEl) avgEl.textContent = results.avg.toFixed(1);
+
+  const aboveEl = document.getElementById("above");
+  if (aboveEl) {
+    aboveEl.textContent = results.aboveAverage.map((s) => s.name).join(", ") || "-";
+  }
+}
+
+const results = computeResults(students);
+
+if (typeof document !== "undefined") {
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => render(results));
+  } else {
+    render(results);
+  }
+} else {
+  console.log("DumbWays Leaderboard");
+  results.leaderboard.forEach((student, index) => {
+    console.log(`${index + 1}. ${student.name} - ${student.score} (${student.grade})`);
+  });
+  console.log("");
+  console.log(`Nilai rata-rata: ${results.avg.toFixed(1)}`);
+  console.log(
+    `Siswa di atas rata-rata: ${
+      results.aboveAverage.map((s) => s.name).join(", ") || "-"
+    }`,
+  );
+}

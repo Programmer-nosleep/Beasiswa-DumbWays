@@ -3,6 +3,10 @@
   "module": "index.ts",
   "type": "module",
   "private": true,
+  "scripts": {
+    "run:console": "bun run index.ts",
+    "build:dom": "bun build index.ts --target=browser --outfile index.js"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
