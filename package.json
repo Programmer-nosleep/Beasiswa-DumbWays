@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "run:console": "bun run index.ts",
-    "build:dom": "bun build index.ts --target=browser --outfile index.js"
+    "build:dom": "bun build index.ts --target=browser --outfile index.js",
+    "dev:dom": "bun run server.ts"
   },
   "devDependencies": {
     "@types/bun": "latest"
