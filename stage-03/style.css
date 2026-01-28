@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #dfe3e8;
+    min-height: 100vh;
+}
+
+/* Home page */
+.home-page {
+    background: radial-gradient(1200px 500px at 50% 0%, #eef2f6 0%, #dfe3e8 60%, #dfe3e8 100%);
+}
+
+.home-wrapper {
+    padding: 48px 12px 80px;
+}
+
+.home-page .main-card {
+    max-width: 1120px;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 70px 80px;
+    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 768px) {
+    .home-page .main-card {
+        padding: 40px 25px;
+    }
+}
+
+.home-page .btn-contact {
+    background-color: #111827;
+    font-weight: 500;
+}
+
+.home-page .social-icon {
+    width: 42px;
+    height: 42px;
+    background-color: #111827;
+}
+
+.home-page .profile-card {
+    position: static;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.home-page .profile-card img {
+    height: 360px;
+}
+
+.home-page .profile-info {
+    position: static;
+    padding: 18px 22px;
+    border-radius: 0;
+}
+
+/* Navbar Logo */
+.logo-text {
+    color: #e67e22;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* Main Content Card */
+.main-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 60px 80px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 768px) {
+    .main-card {
+        padding: 40px 25px;
+    }
+}
+
+/* Left Section Heading */
+.main-card h1 {
+    font-size: 2rem;
+    color: #1a1a2e;
+}
+
+/* Custom button style */
+.btn-contact {
+    background-color: #1a1a2e;
+    color: #fff;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-contact:hover {
+    background-color: #000;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Link hover effect */
+.link-download {
+    transition: all 0.3s ease;
+}
+
+.link-download:hover {
+    color: #555 !important;
+}
+
+/* Social icons as circles */
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #1a1a2e;
+    color: #fff;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #333;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* Profile card */
+.profile-card {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.profile-card img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+}
+
+.profile-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 20px 25px;
+    text-align: center;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.profile-info h5 {
+    font-size: 1.25rem;
+    color: #1a1a2e;
+}
+
+.profile-info p {
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .profile-card {
+        max-width: 320px;
+    }
+
+    .profile-card img {
+        height: 380px;
+    }
+}
+
+/* Contact page */
+.contact-form-wrapper {
+    max-width: 640px;
+    padding: 40px 18px 80px;
+}
+
+.contact-form-title {
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin: 10px 0 40px;
+    color: #111827;
+}
+
+.contact-label {
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+.contact-control {
+    border: 0;
+    border-radius: 6px;
+    padding: 14px 16px;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.03), 0 10px 22px rgba(0, 0, 0, 0.08);
+}
+
+.contact-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(26, 26, 46, 0.15), 0 10px 22px rgba(0, 0, 0, 0.08);
+}
+
+.contact-textarea {
+    resize: none;
+    min-height: 150px;
+}
+
+.btn-submit {
+    background-color: #1a1a2e;
+    color: #fff;
+    font-weight: 600;
+    text-transform: lowercase;
+    transition: all 0.25s ease;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+
+.btn-submit:hover {
+    background-color: #000;
+    color: #fff;
+    transform: translateY(-2px);
+}
