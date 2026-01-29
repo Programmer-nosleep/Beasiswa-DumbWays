@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+:root {
+    --ink: #111827;
+    --ink-soft: rgba(17, 24, 39, 0.72);
+    --card: #ffffff;
+    --bg: #dfe3e8;
+    --brand: #e67e22;
+    --shadow-lg: 0 26px 60px rgba(0, 0, 0, 0.14);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -8,63 +17,97 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #dfe3e8;
+    background-color: var(--bg);
     min-height: 100vh;
+}
+
+/* Navbar */
+.app-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(17, 24, 39, 0.06);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+}
+
+.app-navbar .nav-link {
+    color: var(--ink);
+    opacity: 0.92;
+}
+
+.app-navbar .nav-link:hover {
+    opacity: 1;
+}
+
+.app-navbar .nav-link.active {
+    opacity: 1;
+}
+
+.app-navbar .btn.btn-dark {
+    background-color: var(--ink);
+    border-color: var(--ink);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
 }
 
 /* Home page */
 .home-page {
-    background: radial-gradient(1200px 500px at 50% 0%, #eef2f6 0%, #dfe3e8 60%, #dfe3e8 100%);
+    background: radial-gradient(1100px 520px at 50% 0%, #f2f5f8 0%, #e3e7eb 55%, var(--bg) 100%);
 }
 
 .home-wrapper {
-    padding: 48px 12px 80px;
+    padding-top: 64px;
+    padding-bottom: 90px;
 }
 
 .home-page .main-card {
     max-width: 1120px;
     margin: 0 auto;
-    border-radius: 10px;
-    padding: 70px 80px;
-    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    padding: 76px 86px;
+    box-shadow: var(--shadow-lg);
 }
 
-@media (max-width: 768px) {
-    .home-page .main-card {
-        padding: 40px 25px;
-    }
+.home-page .main-card p {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
 }
 
 .home-page .btn-contact {
-    background-color: #111827;
+    background-color: var(--ink);
     font-weight: 500;
 }
 
 .home-page .social-icon {
     width: 42px;
     height: 42px;
-    background-color: #111827;
+    background-color: var(--ink);
 }
 
 .home-page .profile-card {
     position: static;
     border-radius: 10px;
     background-color: #fff;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
 }
 
 .home-page .profile-card img {
-    height: 360px;
+    height: 340px;
 }
 
 .home-page .profile-info {
     position: static;
     padding: 18px 22px;
     border-radius: 0;
+    background-color: #f8fafc;
+    border-top: 1px solid rgba(17, 24, 39, 0.06);
 }
 
 /* Navbar Logo */
 .logo-text {
-    color: #e67e22;
+    color: var(--brand);
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 2px;
@@ -72,16 +115,10 @@ body {
 
 /* Main Content Card */
 .main-card {
-    background-color: #ffffff;
+    background-color: var(--card);
     border-radius: 20px;
     padding: 60px 80px;
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
-}
-
-@media (max-width: 768px) {
-    .main-card {
-        padding: 40px 25px;
-    }
 }
 
 /* Left Section Heading */
@@ -173,17 +210,6 @@ body {
     font-size: 0.9rem;
 }
 
-/* Responsive */
-@media (max-width: 992px) {
-    .profile-card {
-        max-width: 320px;
-    }
-
-    .profile-card img {
-        height: 380px;
-    }
-}
-
 /* Contact page */
 .contact-form-wrapper {
     max-width: 640px;
@@ -233,4 +259,23 @@ body {
     background-color: #000;
     color: #fff;
     transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .home-page .main-card { 
+        padding: 40px 25px; } 
+    .main-card {
+        padding: 40px 25px;
+    }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .profile-card {
+        max-width: 320px;
+    }
+
+    .profile-card img {
+        height: 380px;
+    }
 }
