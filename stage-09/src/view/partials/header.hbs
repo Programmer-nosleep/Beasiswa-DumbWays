@@ -1,0 +1,35 @@
+<header class="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-[1000]">
+    <div class="w-full max-w-[1200px] mx-auto px-6">
+        <nav class="flex justify-between items-center py-4">
+            <a href="/" class="flex items-center gap-2">
+                <span
+                    class="text-2xl font-bold bg-gradient-to-br from-primary to-secondary bg-clip-text text-transparent">MyApp</span>
+            </a>
+
+            <ul class="nav-menu flex gap-2 md:flex">
+                <li>
+                    <a href="/"
+                        class="nav-link px-4 py-2 rounded-lg font-medium transition-all duration-300 text-slate-700 hover:bg-slate-100 hover:text-primary {{#if (eq activePage "
+                        home")}}bg-gradient-to-br from-primary to-secondary !text-white{{/if}}">Home</a>
+                </li>
+                <li>
+                    <a href="/about"
+                        class="nav-link px-4 py-2 rounded-lg font-medium transition-all duration-300 text-slate-700 hover:bg-slate-100 hover:text-primary {{#if (eq activePage "
+                        about")}}bg-gradient-to-br from-primary to-secondary !text-white{{/if}}">About</a>
+                </li>
+                <li>
+                    <a href="/contact"
+                        class="nav-link px-4 py-2 rounded-lg font-medium transition-all duration-300 text-slate-700 hover:bg-slate-100 hover:text-primary {{#if (eq activePage "
+                        contact")}}bg-gradient-to-br from-primary to-secondary !text-white{{/if}}">Contact</a>
+                </li>
+            </ul>
+
+            <button class="hamburger hidden md:hidden flex-col gap-[5px] bg-transparent border-none cursor-pointer p-2"
+                id="hamburger">
+                <span class="bar w-[25px] h-[3px] bg-dark rounded-sm transition-all duration-300"></span>
+                <span class="bar w-[25px] h-[3px] bg-dark rounded-sm transition-all duration-300"></span>
+                <span class="bar w-[25px] h-[3px] bg-dark rounded-sm transition-all duration-300"></span>
+            </button>
+        </nav>
+    </div>
+</header>
