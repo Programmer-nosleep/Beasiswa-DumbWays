@@ -1,0 +1,27 @@
+<header class="header">
+    <div class="container">
+        <nav class="navbar">
+            <a href="/" class="logo">
+                <span class="logo-text">MyApp</span>
+            </a>
+
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/" class="nav-link {{#if (eq activePage " home")}}active{{/if}}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/about" class="nav-link {{#if (eq activePage " about")}}active{{/if}}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/contact" class="nav-link {{#if (eq activePage " contact")}}active{{/if}}">Contact</a>
+                </li>
+            </ul>
+
+            <button class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </nav>
+    </div>
+</header>

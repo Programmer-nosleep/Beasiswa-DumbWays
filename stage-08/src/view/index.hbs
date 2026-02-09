@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{#if description}}{{description}}{{else}}Welcome to My App{{/if}}">
+  <title>{{#if title}}{{title}}{{else}}My App{{/if}}</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  {{> header}}
+
+  <main class="main-content">
+    {{#if (eq content "about")}}
+    {{> content/about}}
+    {{else if (eq content "contact")}}
+    {{> content/contact}}
+    {{else if (eq content "not-found")}}
+    {{> content/not-found}}
+    {{else if (eq content "error")}}
+    {{> content/error}}
+    {{else}}
+    {{> content/home}}
+    {{/if}}
+  </main>
+
+  {{> footer}}
+
+  <!-- JavaScript -->
+  <script src="/assets/js/main.js"></script>
+</body>
+
+</html>
