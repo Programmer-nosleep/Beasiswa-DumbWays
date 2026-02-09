@@ -1,10 +1,14 @@
-<section class="error-section">
-    <div class="container">
-        <div class="error-content">
-            <h1 class="error-code">500</h1>
-            <h2 class="error-title">Server Error</h2>
-            <p class="error-message">{{#if error}}{{error}}{{else}}Something went wrong on our end.{{/if}}</p>
-            <a href="/" class="btn btn-primary">Back to Home</a>
+<section class="py-24 text-center min-h-[60vh] flex items-center bg-slate-50">
+    <div class="w-full max-w-[1200px] mx-auto px-6">
+        <div class="max-w-[500px] mx-auto">
+            <h1
+                class="text-[8rem] font-extrabold leading-none mb-4 bg-gradient-to-br from-primary to-secondary bg-clip-text text-transparent">
+                500</h1>
+            <h2 class="text-3xl font-bold mb-4 text-dark">Server Error</h2>
+            <p class="text-slate-500 mb-8">{{#if error}}{{error}}{{else}}Something went wrong on our end.{{/if}}</p>
+            <a href="/"
+                class="inline-flex items-center justify-center px-8 py-3.5 rounded-xl font-semibold text-base cursor-pointer transition-all duration-300 bg-gradient-to-br from-primary to-secondary text-white shadow-[0_4px_14px_0_rgba(99,102,241,0.4)] hover:-translate-y-0.5 hover:shadow-[0_6px_20px_0_rgba(99,102,241,0.5)]">Back
+                to Home</a>
         </div>
     </div>
 </section>

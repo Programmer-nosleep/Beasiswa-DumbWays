@@ -1,41 +1,45 @@
-<section class="page-section">
-    <div class="container">
-        <h1 class="page-title">Contact Us</h1>
-        <div class="contact-grid">
-            <div class="content-card">
-                <h2>Get in Touch</h2>
-                <form class="contact-form" action="/api/contact" method="POST">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required placeholder="Your name">
+<section class="py-16">
+    <div class="w-full max-w-[1200px] mx-auto px-6">
+        <h1 class="text-4xl font-bold mb-8 text-dark">Contact Us</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white p-10 rounded-2xl shadow-md">
+                <h2 class="text-2xl font-semibold mb-6 text-dark">Get in Touch</h2>
+                <form class="contact-form flex flex-col gap-6" action="/api/contact" method="POST">
+                    <div class="flex flex-col gap-2">
+                        <label for="name" class="font-semibold text-dark">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your name"
+                            class="px-4 py-3.5 border-2 border-slate-200 rounded-lg font-inherit text-base transition-all duration-300 bg-white focus:outline-none focus:border-primary focus:ring-[3px] focus:ring-primary/10">
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required placeholder="your@email.com">
+                    <div class="flex flex-col gap-2">
+                        <label for="email" class="font-semibold text-dark">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="your@email.com"
+                            class="px-4 py-3.5 border-2 border-slate-200 rounded-lg font-inherit text-base transition-all duration-300 bg-white focus:outline-none focus:border-primary focus:ring-[3px] focus:ring-primary/10">
                     </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required
-                            placeholder="Your message..."></textarea>
+                    <div class="flex flex-col gap-2">
+                        <label for="message" class="font-semibold text-dark">Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Your message..."
+                            class="px-4 py-3.5 border-2 border-slate-200 rounded-lg font-inherit text-base transition-all duration-300 bg-white focus:outline-none focus:border-primary focus:ring-[3px] focus:ring-primary/10 resize-y"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <button type="submit"
+                        class="inline-flex items-center justify-center px-8 py-3.5 rounded-xl font-semibold text-base cursor-pointer transition-all duration-300 bg-gradient-to-br from-primary to-secondary text-white shadow-[0_4px_14px_0_rgba(99,102,241,0.4)] hover:-translate-y-0.5 hover:shadow-[0_6px_20px_0_rgba(99,102,241,0.5)]">Send
+                        Message</button>
                 </form>
             </div>
 
-            <div class="content-card">
-                <h2>Contact Information</h2>
-                <div class="contact-info">
-                    <div class="info-item">
-                        <span class="info-icon">📧</span>
-                        <span>hello@myapp.com</span>
+            <div class="bg-white p-10 rounded-2xl shadow-md">
+                <h2 class="text-2xl font-semibold mb-6 text-dark">Contact Information</h2>
+                <div class="flex flex-col gap-6 mt-4">
+                    <div class="flex items-center gap-4">
+                        <span class="text-2xl">📧</span>
+                        <span class="text-slate-600">hello@myapp.com</span>
                     </div>
-                    <div class="info-item">
-                        <span class="info-icon">📞</span>
-                        <span>+62 812-3456-7890</span>
+                    <div class="flex items-center gap-4">
+                        <span class="text-2xl">📞</span>
+                        <span class="text-slate-600">+62 812-3456-7890</span>
                     </div>
-                    <div class="info-item">
-                        <span class="info-icon">📍</span>
-                        <span>Jakarta, Indonesia</span>
+                    <div class="flex items-center gap-4">
+                        <span class="text-2xl">📍</span>
+                        <span class="text-slate-600">Jakarta, Indonesia</span>
                     </div>
                 </div>
             </div>
