@@ -1,0 +1,578 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --ink: #111827;
+    --ink-soft: rgba(17, 24, 39, 0.72);
+    --card: #ffffff;
+    --bg: #dfe3e8;
+    --brand: #e67e22;
+    --shadow-lg: 0 26px 60px rgba(0, 0, 0, 0.14);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg);
+    min-height: 100vh;
+}
+
+/* Navbar */
+.app-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(17, 24, 39, 0.06);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+}
+
+.app-navbar .nav-link {
+    color: var(--ink);
+    opacity: 0.92;
+}
+
+.app-navbar .nav-link:hover {
+    opacity: 1;
+}
+
+.app-navbar .nav-link.active {
+    opacity: 1;
+}
+
+.app-navbar .btn.btn-dark {
+    background-color: var(--ink);
+    border-color: var(--ink);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+
+/* Home page */
+.home-page {
+    background: radial-gradient(1100px 520px at 50% 0%, #f2f5f8 0%, #e3e7eb 55%, var(--bg) 100%);
+}
+
+.home-wrapper {
+    padding-top: 64px;
+    padding-bottom: 90px;
+}
+
+.home-page .main-card {
+    max-width: 1120px;
+    margin: 0 auto;
+    border-radius: 8px;
+    padding: 76px 86px;
+    box-shadow: var(--shadow-lg);
+}
+
+.home-page .main-card p {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+}
+
+.home-page .btn-contact {
+    background-color: var(--ink);
+    font-weight: 500;
+}
+
+.home-page .social-icon {
+    width: 42px;
+    height: 42px;
+    background-color: var(--ink);
+}
+
+.home-page .profile-card {
+    position: static;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
+}
+
+.home-page .profile-card img {
+    height: 340px;
+}
+
+.home-page .profile-info {
+    position: static;
+    padding: 18px 22px;
+    border-radius: 0;
+    background-color: #f8fafc;
+    border-top: 1px solid rgba(17, 24, 39, 0.06);
+}
+
+/* Navbar Logo */
+.logo-text {
+    color: var(--brand);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* Main Content Card */
+.main-card {
+    background-color: var(--card);
+    border-radius: 20px;
+    padding: 60px 80px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Left Section Heading */
+.main-card h1 {
+    font-size: 2rem;
+    color: #1a1a2e;
+}
+
+/* Custom button style */
+.btn-contact {
+    background-color: #1a1a2e;
+    color: #fff;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-contact:hover {
+    background-color: #000;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Link hover effect */
+.link-download {
+    transition: all 0.3s ease;
+}
+
+.link-download:hover {
+    color: #555 !important;
+}
+
+/* Social icons as circles */
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #1a1a2e;
+    color: #fff;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #333;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* Profile card */
+.profile-card {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.profile-card img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+}
+
+.profile-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 20px 25px;
+    text-align: center;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.profile-info h5 {
+    font-size: 1.25rem;
+    color: #1a1a2e;
+}
+
+.profile-info p {
+    font-size: 0.9rem;
+}
+
+/* Contact page */
+.contact-form-wrapper {
+    max-width: 640px;
+    padding: 40px 18px 80px;
+}
+
+.contact-form-title {
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin: 10px 0 40px;
+    color: #111827;
+}
+
+.contact-label {
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+.contact-control {
+    border: 0;
+    border-radius: 6px;
+    padding: 14px 16px;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.03), 0 10px 22px rgba(0, 0, 0, 0.08);
+}
+
+.contact-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(26, 26, 46, 0.15), 0 10px 22px rgba(0, 0, 0, 0.08);
+}
+
+.contact-textarea {
+    resize: none;
+    min-height: 150px;
+}
+
+.btn-submit {
+    background-color: #1a1a2e;
+    color: #fff;
+    font-weight: 600;
+    text-transform: lowercase;
+    transition: all 0.25s ease;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+
+.btn-submit:hover {
+    background-color: #000;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .home-page .main-card {
+        padding: 40px 25px;
+    }
+
+    .main-card {
+        padding: 40px 25px;
+    }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .profile-card {
+        max-width: 320px;
+    }
+
+    .profile-card img {
+        height: 380px;
+    }
+}
+
+/* ================================================
+   MY PROJECT PAGE STYLES
+   ================================================ */
+
+/* Add Project Section */
+.add-project-section {
+    background: radial-gradient(1100px 520px at 50% 0%, #f2f5f8 0%, #e3e7eb 55%, var(--bg) 100%);
+    padding: 50px 0 60px;
+}
+
+.project-form-card {
+    background: var(--card);
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 50px 60px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+}
+
+.form-title {
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: var(--ink);
+    margin-bottom: 40px;
+}
+
+.project-label {
+    font-weight: 600;
+    color: var(--ink);
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+.project-input {
+    border: none;
+    border-radius: 8px;
+    padding: 14px 18px;
+    background-color: #f8fafc;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02), 0 8px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.project-input:focus {
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(26, 26, 46, 0.12), 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.project-textarea {
+    resize: none;
+    min-height: 120px;
+}
+
+/* Technology Checkboxes */
+.tech-checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.tech-checkbox-group .form-check {
+    margin: 0;
+}
+
+.tech-checkbox-group .form-check-label {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    cursor: pointer;
+}
+
+.tech-checkbox {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #cbd5e1;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.tech-checkbox:checked {
+    background-color: var(--ink);
+    border-color: var(--ink);
+}
+
+/* Upload Image */
+.upload-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #f8fafc;
+    border-radius: 8px;
+    padding: 8px 16px;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02), 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.upload-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    cursor: pointer;
+    padding: 8px 0;
+}
+
+.upload-text {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.upload-icon {
+    color: var(--ink);
+    font-size: 1.2rem;
+}
+
+.file-name {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Submit Button */
+.btn-submit-project {
+    background-color: var(--ink);
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 12px 36px;
+    border-radius: 8px;
+    text-transform: lowercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.btn-submit-project:hover {
+    background-color: #000;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* My Project Section */
+.my-project-section {
+    background-color: var(--bg);
+    padding: 60px 0 80px;
+}
+
+.section-title {
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: var(--ink);
+    margin-bottom: 50px;
+}
+
+/* Project Card */
+.project-card {
+    background: var(--card);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+.project-card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.project-card-body {
+    padding: 20px;
+}
+
+.project-card-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+
+.project-card-duration {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-bottom: 12px;
+}
+
+.project-card-desc {
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    margin-bottom: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Tech Icons */
+.tech-icons {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.tech-icon {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tech-icon img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Card Actions */
+.card-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-card-action {
+    flex: 1;
+    padding: 8px 16px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 6px;
+    text-transform: capitalize;
+    transition: all 0.3s ease;
+}
+
+.btn-edit {
+    background-color: #fbbf24;
+    color: #000;
+    border: none;
+}
+
+.btn-edit:hover {
+    background-color: #f59e0b;
+    color: #000;
+}
+
+.btn-delete {
+    background-color: #ef4444;
+    color: #fff;
+    border: none;
+}
+
+.btn-delete:hover {
+    background-color: #dc2626;
+    color: #fff;
+}
+
+/* My Project Page Responsive */
+@media (max-width: 768px) {
+    .project-form-card {
+        padding: 35px 25px;
+    }
+
+    .tech-checkbox-group {
+        gap: 12px;
+    }
+
+    .project-card-img {
+        height: 150px;
+    }
+}
+
+@media (max-width: 576px) {
+    .add-project-section {
+        padding: 30px 0 40px;
+    }
+
+    .my-project-section {
+        padding: 40px 0 60px;
+    }
+
+    .project-card-body {
+        padding: 16px;
+    }
+}

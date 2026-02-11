@@ -1,0 +1,36 @@
+{
+  "name": "express",
+  "module": "server.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "bun --watch server.ts",
+    "typecheck": "tsc --noEmit",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:studio": "prisma studio",
+    "build": "bun build src/index.ts --outdir dist",
+    "start": "bun dist/index.js"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/express-session": "^1.18.2",
+    "@types/hbs": "^4.0.5",
+    "@types/pg": "^8.16.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.3.0",
+    "@prisma/client": "^7.3.0",
+    "@types/express": "^5.0.6",
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^17.2.4",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "hbs": "^4.2.0",
+    "multer": "^2.0.2",
+    "pg": "^8.18.0",
+    "prisma": "^7.3.0"
+  }
+}
