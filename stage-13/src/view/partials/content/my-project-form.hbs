@@ -1,0 +1,97 @@
+<section class="py-16">
+  <div class="w-full max-w-[900px] mx-auto px-6">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
+      <h1 class="text-4xl font-bold text-dark">
+        {{#if isEdit}}Edit Project{{else}}Add Project{{/if}}
+      </h1>
+
+      <a href="/my-project"
+        class="inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-semibold text-sm cursor-pointer transition-all duration-300 bg-white text-slate-700 border-2 border-slate-200 hover:border-slate-300 hover:bg-slate-50">
+        Back to Projects
+      </a>
+    </div>
+
+    <div class="bg-white p-10 rounded-2xl shadow-md animate-fade-in-up">
+      {{#if error}}
+      <div class="mb-6 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-red-700">
+        {{error}}
+      </div>
+      {{/if}}
+
+      <form class="flex flex-col gap-6" action="{{formAction}}" method="POST" enctype="multipart/form-data">
+        <div class="flex flex-col gap-2">
+          <label for="title" class="font-semibold text-dark">Project Name</label>
+          <input type="text" id="title" name="title" required placeholder="Enter project name" value="{{form.title}}"
+            class="px-4 py-3.5 border-2 border-slate-200 rounded-lg font-inherit text-base transition-all duration-300 bg-white focus:outline-none focus:border-primary focus:ring-[3px] focus:ring-primary/10">
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="flex flex-col gap-2">
+            <label for="startDate" class="font-semibold text-dark">Start Date</label>
+            <input type="date" id="startDate" name="startDate" required value="{{form.startDate}}"
+              class="px-4 py-3.5 border-2 border-slate-200 rounded-lg font-inherit text-base transition-all duration-300 bg-white focus:outline-none focus:border-primary focus:ring-[3px] focus:ring-primary/10">
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <label for="endDate" class="font-semibold text-dark">End Date</label>
+            <input type="date" id="endDate" name="endDate" required value="{{form.endDate}}"
+              class="px-4 py-3.5 border-2 border-slate-200 rounded-lg font-inherit text-base transition-all duration-300 bg-white focus:outline-none focus:border-primary focus:ring-[3px] focus:ring-primary/10">
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <label for="description" class="font-semibold text-dark">Description</label>
+          <textarea id="description" name="description" rows="6" required placeholder="Write project description..."
+            class="px-4 py-3.5 border-2 border-slate-200 rounded-lg font-inherit text-base transition-all duration-300 bg-white focus:outline-none focus:border-primary focus:ring-[3px] focus:ring-primary/10 resize-y">{{form.description}}</textarea>
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <span class="font-semibold text-dark">Technologies</span>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <label class="inline-flex items-center gap-2 text-slate-700">
+              <input type="checkbox" name="technologies" value="nodejs" {{#if (includes form.technologies "nodejs")}}checked{{/if}}>
+              <span>Node.js</span>
+            </label>
+            <label class="inline-flex items-center gap-2 text-slate-700">
+              <input type="checkbox" name="technologies" value="reactjs" {{#if (includes form.technologies "reactjs")}}checked{{/if}}>
+              <span>React.js</span>
+            </label>
+            <label class="inline-flex items-center gap-2 text-slate-700">
+              <input type="checkbox" name="technologies" value="nextjs" {{#if (includes form.technologies "nextjs")}}checked{{/if}}>
+              <span>Next.js</span>
+            </label>
+            <label class="inline-flex items-center gap-2 text-slate-700">
+              <input type="checkbox" name="technologies" value="typescript" {{#if (includes form.technologies "typescript")}}checked{{/if}}>
+              <span>TypeScript</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <label for="image" class="font-semibold text-dark">Upload Image</label>
+
+          {{#if isEdit}}
+          {{#if form.imageUrl}}
+          <img src="{{form.imageUrl}}" alt="Current project image"
+            class="w-full max-w-[520px] rounded-2xl border border-slate-200">
+          {{/if}}
+
+          <input type="file" id="image" name="image" accept="image/*"
+            class="px-4 py-3.5 border-2 border-slate-200 rounded-lg font-inherit text-base transition-all duration-300 bg-white file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-slate-100 file:text-slate-700 hover:file:bg-slate-200 focus:outline-none focus:border-primary focus:ring-[3px] focus:ring-primary/10">
+          <p class="text-sm text-slate-500">Kosongkan jika tidak ingin mengganti gambar.</p>
+          {{else}}
+          <input type="file" id="image" name="image" accept="image/*" required
+            class="px-4 py-3.5 border-2 border-slate-200 rounded-lg font-inherit text-base transition-all duration-300 bg-white file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-slate-100 file:text-slate-700 hover:file:bg-slate-200 focus:outline-none focus:border-primary focus:ring-[3px] focus:ring-primary/10">
+          {{/if}}
+        </div>
+
+        <div class="flex items-center gap-3 pt-2">
+          <button type="submit"
+            class="inline-flex items-center justify-center px-8 py-3.5 rounded-xl font-semibold text-base cursor-pointer transition-all duration-300 bg-gradient-to-br from-primary to-secondary text-white shadow-[0_4px_14px_0_rgba(99,102,241,0.4)] hover:-translate-y-0.5 hover:shadow-[0_6px_20px_0_rgba(99,102,241,0.5)]">{{submitLabel}}</button>
+          <a href="/my-project"
+            class="inline-flex items-center justify-center px-8 py-3.5 rounded-xl font-semibold text-base cursor-pointer transition-all duration-300 bg-white text-slate-700 border-2 border-slate-200 hover:border-slate-300 hover:bg-slate-50">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{#if description}}{{description}}{{else}}Welcome to My App{{/if}}">
+  <title>{{#if title}}{{title}}{{else}}My App{{/if}}</title>
+
+  <!-- Tailwind CSS v4 CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#6366f1',
+            'primary-dark': '#4f46e5',
+            secondary: '#ec4899',
+            accent: '#06b6d4',
+            dark: '#0f172a',
+            'dark-light': '#1e293b',
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS (minimal) -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  {{> header}}
+
+  <main class="flex-1 bg-slate-50">
+    {{#if (eq content "about")}}
+    {{> content/about}}
+    {{else if (eq content "contact")}}
+    {{> content/contact}}
+    {{else if (eq content "login")}}
+    {{> content/login}}
+    {{else if (eq content "register")}}
+    {{> content/register}}
+    {{else if (eq content "my-project")}}
+    {{> content/my-project}}
+    {{else if (eq content "my-project-form")}}
+    {{> content/my-project-form}}
+    {{else if (eq content "my-project-detail")}}
+    {{> content/my-project-detail}}
+    {{else if (eq content "not-found")}}
+    {{> content/not-found}}
+    {{else if (eq content "error")}}
+    {{> content/error}}
+    {{else}}
+    {{> content/home}}
+    {{/if}}
+  </main>
+
+  {{> footer}}
+
+  <!-- JavaScript -->
+  <script src="/assets/js/main.js"></script>
+</body>
+
+</html>
